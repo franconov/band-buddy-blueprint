@@ -4,7 +4,7 @@ const Footer = () => (
   <footer className="border-t border-border bg-card py-8">
     <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
       <p className="text-muted-foreground text-sm">
-        © {new Date().getFullYear()} D? — Tutti i diritti riservati
+        © {new Date().getFullYear()} Il Dubbio Di Davide — Tutti i diritti riservati
       </p>
       <div className="flex items-center gap-5">
         <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">

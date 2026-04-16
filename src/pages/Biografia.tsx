@@ -28,7 +28,7 @@ const Biografia = () => (
           className="space-y-6 text-muted-foreground text-lg leading-relaxed mb-20"
         >
           <p>
-            I <span className="text-foreground font-semibold">D?</span> nascono dall'esigenza di fare musica
+            I <span className="text-foreground font-semibold">Il Dubbio Di Davide</span> nascono dall'esigenza di fare musica
             senza compromessi. Un progetto che mescola rock, alternative e sonorità moderne in un
             mix esplosivo e personale.
           </p>
