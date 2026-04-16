@@ -20,7 +20,7 @@ const Index = () => (
         <div className="glow-red rounded-full">
           <img
             src={logo}
-            alt="D? Band Logo"
+            alt="Il Dubbio Di Davide Band Logo"
             className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-2 border-primary/30"
           />
         </div>
@@ -29,9 +29,9 @@ const Index = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-6xl md:text-8xl font-heading text-foreground text-glow-red"
+          className="text-4xl md:text-6xl font-heading text-foreground text-glow-red text-center"
         >
-          D?
+          Il Dubbio Di Davide
         </motion.h1>
 
         <motion.p
