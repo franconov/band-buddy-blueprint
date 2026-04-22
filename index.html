@@ -184,6 +184,18 @@
   </head>
 
   <body>
+    <!--
+      Form "fantasma" per il rilevamento Netlify Forms.
+      Questo form non è mai visibile all'utente (hidden).
+      Netlify lo rileva al build time e registra il form "contact".
+      Il form reale è renderizzato da React in src/pages/Contatti.tsx e fa submit verso questo endpoint.
+    -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
