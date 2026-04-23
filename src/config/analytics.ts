@@ -9,6 +9,9 @@ export const analytics = {
   // Lascia stringa vuota per disabilitare Meta Pixel
   metaPixelId: "",
 
+  // Microsoft Clarity Project ID (formato alfanumerico)
+  clarityProjectId: "wg4c2kfd8x",
+
   // Nome del cookie di consenso in localStorage
   consentStorageKey: "iddd-consent-v1",
 

@@ -101,6 +101,20 @@ const loadMetaPixel = () => {
   /* eslint-enable @typescript-eslint/no-explicit-any */
 };
 
+// Carica dinamicamente Microsoft Clarity se abilitato
+let clarityLoaded = false;
+const loadClarity = () => {
+  if (clarityLoaded || !analytics.clarityProjectId) return;
+  clarityLoaded = true;
+  // Microsoft Clarity snippet (versione ufficiale)
+  window.clarity("consent");
+  const script = document.createElement("script");
+  script.async = true;
+  script.type = "text/javascript";
+  script.src = "https://www.clarity.ms/tag/" + analytics.clarityProjectId;
+  document.head.appendChild(script);
+};
+
 export const ConsentProvider = ({ children }: { children: ReactNode }) => {
   const [consent, setConsent] = useState<ConsentState | null>(null);
   const [isBannerOpen, setBannerOpen] = useState(false);
@@ -112,7 +126,10 @@ export const ConsentProvider = ({ children }: { children: ReactNode }) => {
     if (existing) {
       setConsent(existing);
       updateGoogleConsent(existing);
-      if (existing.statistics) loadGA4Script();
+      if (existing.statistics) {
+        loadGA4Script();
+        loadClarity();
+      }
       if (existing.marketing && analytics.metaPixelId) loadMetaPixel();
     } else {
       setBannerOpen(true);
@@ -123,7 +140,10 @@ export const ConsentProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem(analytics.consentStorageKey, JSON.stringify(next));
     setConsent(next);
     updateGoogleConsent(next);
-    if (next.statistics) loadGA4Script();
+    if (next.statistics) {
+      loadGA4Script();
+      loadClarity();
+    }
     if (next.marketing && analytics.metaPixelId) loadMetaPixel();
     setBannerOpen(false);
     setModalOpen(false);
@@ -197,5 +217,7 @@ declare global {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fbq?: (...args: any[]) => void;
     _fbq?: unknown;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    clarity?: (...args: any[]) => void;
   }
 }

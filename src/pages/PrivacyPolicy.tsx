@@ -84,8 +84,11 @@ const PrivacyPolicy = () => (
                 dell'interessato (art. 6.1.b GDPR).
               </li>
               <li>
-                <strong>Analisi statistica anonima</strong> della navigazione sul sito —
-                base giuridica: consenso dell'interessato (art. 6.1.a GDPR).
+                <strong>Analisi statistica anonima</strong> della navigazione sul sito e
+                registrazione delle sessioni utente (heatmap, click, scroll, movimento
+                mouse) tramite Microsoft Clarity — base giuridica: consenso
+                dell'interessato (art. 6.1.a GDPR). È possibile rifiutare il session
+                recording rifiutando i cookie statistici.
               </li>
               <li>
                 <strong>Marketing e profilazione</strong> tramite strumenti di tracciamento
@@ -109,19 +112,20 @@ const PrivacyPolicy = () => (
             </h2>
             <p>
               Il sito utilizza cookie tecnici (sempre attivi) e, previo consenso, cookie
-              di statistica, marketing e preferenze. Per il dettaglio completo dei cookie
-              utilizzati, della loro durata e dei terzi coinvolti consulta la{" "}
+              di statistica (incluso Microsoft Clarity per il session recording), marketing
+              e preferenze. Per il dettaglio completo dei cookie utilizzati, della loro
+              durata e dei terzi coinvolti consulta la{" "}
               <Link to="/cookie-policy" className="text-primary hover:underline">
                 Cookie Policy
               </Link>
               .
             </p>
             <p className="mt-2">
-              <strong>Trasferimento dati extra-UE</strong>: l'uso di Google Analytics 4 e
-              Meta Pixel può comportare trasferimento di dati verso gli Stati Uniti.
-              Google LLC e Meta Platforms Ireland aderiscono al quadro EU-U.S. Data
-              Privacy Framework (DPF), che garantisce un livello di protezione adeguato ai
-              sensi dell'art. 45 GDPR.
+              <strong>Trasferimento dati extra-UE</strong>: l'uso di Google Analytics 4,
+              Microsoft Clarity e Meta Pixel può comportare trasferimento di dati verso
+              gli Stati Uniti. Google LLC, Microsoft Corporation e Meta Platforms Ireland
+              aderiscono al quadro EU-U.S. Data Privacy Framework (DPF), che garantisce
+              un livello di protezione adeguato ai sensi dell'art. 45 GDPR.
             </p>
           </div>
 
@@ -156,8 +160,13 @@ const PrivacyPolicy = () => (
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li>Fornitori di servizi tecnici (hosting Netlify, servizi email).</li>
               <li>
-                Fornitori di strumenti di analisi statistica (Google LLC per GA4) e
-                marketing (Meta Platforms Ireland Ltd per il Pixel), previo consenso.
+                Fornitori di strumenti di analisi statistica: Google LLC per GA4,
+                Microsoft Corporation per Clarity (session recording e heatmap),
+                previo consenso.
+              </li>
+              <li>
+                Fornitori di strumenti di marketing (Meta Platforms Ireland Ltd per il
+                Pixel), previo consenso.
               </li>
               <li>
                 Autorità pubbliche, in caso di obblighi di legge o richieste legittime.

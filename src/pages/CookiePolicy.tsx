@@ -81,28 +81,73 @@ const CookiePolicy = () => {
                   <p className="text-sm">
                     Ci aiutano a capire come i visitatori interagiscono con il sito,
                     raccogliendo e trasmettendo informazioni in forma aggregata e anonima.
+                    Include anche il session recording tramite Microsoft Clarity.
                   </p>
-                  <div className="mt-3 text-xs space-y-1">
-                    <p>
-                      <strong>Fornitore:</strong> Google LLC (Google Analytics 4)
-                    </p>
-                    <p>
-                      <strong>Cookie:</strong> _ga, _ga_*, _gid
-                    </p>
-                    <p>
-                      <strong>Durata:</strong> fino a 24 mesi
-                    </p>
-                    <p>
-                      <strong>Privacy policy:</strong>{" "}
-                      <a
-                        href="https://policies.google.com/privacy"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline"
-                      >
-                        policies.google.com/privacy
-                      </a>
-                    </p>
+
+                  <div className="mt-4 space-y-3 text-xs">
+                    <div>
+                      <p className="font-heading text-foreground mb-1">Google Analytics 4</p>
+                      <p>
+                        <strong>Fornitore:</strong> Google LLC (USA)
+                      </p>
+                      <p>
+                        <strong>Cookie:</strong> _ga, _ga_*, _gid
+                      </p>
+                      <p>
+                        <strong>Durata:</strong> fino a 24 mesi
+                      </p>
+                      <p>
+                        <strong>Finalità:</strong> analisi aggregata del traffico, pagine
+                        visitate, tempo di permanenza
+                      </p>
+                      <p>
+                        <strong>Privacy policy:</strong>{" "}
+                        <a
+                          href="https://policies.google.com/privacy"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          policies.google.com/privacy
+                        </a>
+                      </p>
+                    </div>
+
+                    <div className="border-t border-border pt-3">
+                      <p className="font-heading text-foreground mb-1">Microsoft Clarity</p>
+                      <p>
+                        <strong>Fornitore:</strong> Microsoft Corporation (USA)
+                      </p>
+                      <p>
+                        <strong>Cookie:</strong> _clid
+                      </p>
+                      <p>
+                        <strong>Durata:</strong> 1 anno
+                      </p>
+                      <p>
+                        <strong>Finalità:</strong> session recording (registrazione delle
+                        sessioni utente), heatmap (visualizzazione dei punti di click),
+                        analisi del comportamento di navigazione. Le sessioni vengono
+                        registrate per permetterci di vedere esattamente come i visitatori
+                        utilizzano il sito.
+                      </p>
+                      <p className="mt-2 text-muted-foreground">
+                        <strong>⚠️ Nota importante:</strong> Clarity registra le tue sessioni
+                        di navigazione. Se non desideri questo, puoi rifiutare i cookie
+                        statistici nel banner dei cookie.
+                      </p>
+                      <p>
+                        <strong>Privacy policy:</strong>{" "}
+                        <a
+                          href="https://clarity.microsoft.com/privacy"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          clarity.microsoft.com/privacy
+                        </a>
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -190,11 +235,11 @@ const CookiePolicy = () => {
                 Trasferimento di dati extra-UE
               </h2>
               <p>
-                Google LLC (USA) e Meta Platforms, Inc. (USA) sono i destinatari di alcuni
-                dei dati raccolti tramite cookie di terze parti. Entrambe le società
-                aderiscono al quadro <strong>EU-U.S. Data Privacy Framework (DPF)</strong>,
-                che garantisce un livello di protezione adeguato ai sensi dell'art. 45
-                GDPR.
+                Google LLC (USA), Microsoft Corporation (USA) e Meta Platforms, Inc. (USA)
+                sono i destinatari di alcuni dei dati raccolti tramite cookie di terze
+                parti. Tutte queste società aderiscono al quadro{" "}
+                <strong>EU-U.S. Data Privacy Framework (DPF)</strong>, che garantisce un
+                livello di protezione adeguato ai sensi dell'art. 45 GDPR.
               </p>
             </div>
 
