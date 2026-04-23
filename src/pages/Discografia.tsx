@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Music, ExternalLink, Play } from "lucide-react";
 import Layout from "@/components/Layout";
-import { releases, featuredVideo, social } from "@/data/band";
+import { releases, featuredVideo, social, getTrackInfo } from "@/data/band";
 
 const Discografia = () => (
   <Layout>
@@ -111,15 +111,32 @@ const Discografia = () => (
                   </div>
                 </div>
                 <ul className="space-y-2">
-                  {album.tracks.map((track, j) => (
-                    <li
-                      key={track}
-                      className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border/50 last:border-0"
-                    >
-                      <span className="text-primary text-xs font-heading w-6">{String(j + 1).padStart(2, "0")}</span>
-                      {track}
-                    </li>
-                  ))}
+                  {album.tracks.map((track, j) => {
+                    const info = getTrackInfo(track);
+                    return (
+                      <li
+                        key={info.title}
+                        className="py-1 border-b border-border/50 last:border-0"
+                      >
+                        <a
+                          href={info.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
+                          aria-label={`Ascolta ${info.title} su Spotify`}
+                        >
+                          <span className="text-primary text-xs font-heading w-6">
+                            {String(j + 1).padStart(2, "0")}
+                          </span>
+                          <span className="flex-1">{info.title}</span>
+                          <ExternalLink
+                            size={14}
+                            className="opacity-0 group-hover:opacity-60 transition-opacity shrink-0"
+                          />
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </motion.div>

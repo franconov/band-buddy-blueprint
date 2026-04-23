@@ -57,15 +57,34 @@ export const members: Member[] = [
   },
 ];
 
+export type Track = {
+  title: string;
+  spotifyUrl?: string; // URL diretto al brano (opzionale)
+};
+
 export type Release = {
   title: string;
-  year?: string; // TODO: confermare anno esatto con la band
+  year?: string;
   type: "album" | "ep" | "singolo";
-  tracks: string[];
+  tracks: (string | Track)[]; // supporta sia titolo semplice che oggetto con link
   cover?: string; // TODO: aggiungere cover quando disponibili
   spotifyUrl?: string;
   youtubeUrl?: string;
   appleMusicUrl?: string;
+};
+
+// Helper: genera URL di ricerca Spotify con query pre-compilata
+// Usato come fallback quando non abbiamo il link diretto al brano.
+// Apre Spotify con la ricerca già fatta, il brano è tipicamente il primo risultato.
+export const spotifySearchUrl = (trackTitle: string, bandName = "Il Dubbio di Davide") =>
+  `https://open.spotify.com/search/${encodeURIComponent(`${bandName} ${trackTitle}`)}`;
+
+// Helper: normalizza una traccia (stringa o oggetto) in formato {title, url}
+export const getTrackInfo = (track: string | Track) => {
+  if (typeof track === "string") {
+    return { title: track, url: spotifySearchUrl(track) };
+  }
+  return { title: track.title, url: track.spotifyUrl ?? spotifySearchUrl(track.title) };
 };
 
 export const releases: Release[] = [
@@ -92,7 +111,7 @@ export const releases: Release[] = [
   },
   {
     title: "Oltre ogni ragionevole dubbio",
-    // year: da confermare
+    year: "2026",
     type: "album",
     tracks: [
       "Capitano",
