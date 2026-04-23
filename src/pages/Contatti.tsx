@@ -211,6 +211,14 @@ const Contatti = () => {
               >
                 {submitting ? "Invio in corso..." : "Invia Messaggio"}
               </button>
+
+              <p className="text-xs text-muted-foreground text-center">
+                Inviando il modulo accetti il trattamento dei dati secondo la nostra{" "}
+                <a href="/privacy-policy" className="text-primary hover:underline">
+                  Privacy Policy
+                </a>
+                .
+              </p>
             </motion.form>
           </div>
         </div>

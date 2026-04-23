@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Music, ExternalLink, Play } from "lucide-react";
 import Layout from "@/components/Layout";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { releases, featuredVideo, social, getTrackInfo } from "@/data/band";
 
 const Discografia = () => (
@@ -29,13 +30,9 @@ const Discografia = () => (
             In evidenza — {featuredVideo.title}
           </h2>
           <div className="aspect-video rounded overflow-hidden border border-border bg-card">
-            <iframe
-              src={`https://www.youtube.com/embed/${featuredVideo.youtubeId}`}
+            <YouTubeEmbed
+              videoId={featuredVideo.youtubeId}
               title={`Il Dubbio di Davide — ${featuredVideo.title}`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              loading="lazy"
-              className="w-full h-full"
             />
           </div>
         </motion.div>

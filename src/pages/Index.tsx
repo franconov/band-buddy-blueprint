@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Calendar, MapPin } from "lucide-react";
 import Layout from "@/components/Layout";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import logo from "@/assets/logo.jpg";
 import { band, featuredVideo, liveEvents } from "@/data/band";
 
@@ -94,13 +95,9 @@ const Index = () => (
           transition={{ delay: 0.2 }}
           className="aspect-video rounded overflow-hidden border border-border"
         >
-          <iframe
-            src={`https://www.youtube.com/embed/${featuredVideo.youtubeId}`}
+          <YouTubeEmbed
+            videoId={featuredVideo.youtubeId}
             title={`${band.name} — ${featuredVideo.title}`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            loading="lazy"
-            className="w-full h-full"
           />
         </motion.div>
       </div>
