@@ -16,7 +16,6 @@ export const band = {
   bioLong: [
     "Il Dubbio di Davide è una band rock italiana nata a Torino nel 2008. Il progetto fonde rock e cantautorato italiano in un suono personale che si distingue nella scena indie rock nazionale.",
     "La band è guidata dai fratelli Franco e Tony De Gruttola, affiancati da Sandro Pagano al basso, Michele Cotto alla batteria e Daniel Bestonzo a pianoforte, tastiere e programmazioni. La formazione unisce esperienze diverse — dalla scena rock al jazz e alla composizione d'autore — in una proposta che alterna energia elettrica e scrittura intimista.",
-    "Nel 2009 Il Dubbio di Davide vince il Premio della Critica al PopRockContest di Bologna e partecipa al progetto Radar ideato da Massimo Cotto e Franco Zanetti. L'album d'esordio omonimo esce nel 2010 per l'etichetta Egea Music, contiene dodici brani inediti e due cover — \"Sapore di sale\" di Gino Paoli e \"Bang Bang\" di Sonny Bono, quest'ultima interpretata in duetto con Ivan Cattaneo.",
     "Il secondo album, \"Oltre ogni ragionevole dubbio\", amplia la proposta musicale della band con diciassette tracce. Il singolo \"Stelle\" rappresenta la pubblicazione più recente del progetto.",
     "Il nome stesso è un invito: ogni nota, ogni testo, ogni performance è un punto interrogativo lanciato al pubblico. Il dubbio è la componente fondamentale di ogni nuova scoperta, di ogni nuovo approdo. In questo caso il dubbio ha un nome: Il Dubbio di Davide.",
   ],
@@ -38,7 +37,7 @@ export const members: Member[] = [
   {
     name: "Tony De Gruttola",
     role: "Chitarre / Voci / Programmazioni",
-    desc: "Formazione al Conservatorio e al Centro Jazz di Torino, poi al CPM di Milano con Massimo Colombo. Co-fondatore del progetto.",
+    desc: "Chitarrista e co-fondatore del progetto.",
   },
   {
     name: "Sandro Pagano",
@@ -53,7 +52,7 @@ export const members: Member[] = [
   {
     name: "Daniel Bestonzo",
     role: "Pianoforte / Tastiere / Programmazioni",
-    desc: "Formazione al Conservatorio e al Centro Jazz di Torino, poi al CPM di Milano con Massimo Colombo.",
+    desc: "Tastierista. Colore e profondità sonora della band.",
   },
 ];
 
