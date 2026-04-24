@@ -107,11 +107,15 @@ const loadClarity = () => {
   if (clarityLoaded || !analytics.clarityProjectId) return;
   clarityLoaded = true;
   // Microsoft Clarity snippet (versione ufficiale)
-  window.clarity("consent");
   const script = document.createElement("script");
   script.async = true;
   script.type = "text/javascript";
   script.src = "https://www.clarity.ms/tag/" + analytics.clarityProjectId;
+  script.onload = () => {
+    if (window.clarity) {
+      window.clarity("consent");
+    }
+  };
   document.head.appendChild(script);
 };
 
