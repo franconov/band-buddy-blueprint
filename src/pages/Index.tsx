@@ -84,53 +84,65 @@ const Index = () => (
             {liveEvents.map((event) => (
               <div
                 key={`${event.date}-${event.venue}`}
-                className="p-5 rounded border border-primary/50 bg-card/70 backdrop-blur flex flex-col gap-3"
+                className="rounded border border-primary/50 bg-card/70 backdrop-blur overflow-hidden flex flex-col md:flex-row"
               >
-                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-                  <span className="flex items-center gap-2 text-primary font-heading tracking-wider">
-                    <Calendar size={16} />
-                    {formatDate(event.date)}
-                  </span>
-                  {event.time && (
-                    <span className="flex items-center gap-2 text-muted-foreground font-heading">
-                      <Clock size={15} />
-                      ore {event.time}
+                {/* Locandina */}
+                {event.imageUrl && (
+                  <img
+                    src={event.imageUrl}
+                    alt={`Locandina live ${event.venue}`}
+                    className="w-full md:w-36 object-cover object-top"
+                  />
+                )}
+
+                {/* Dati evento */}
+                <div className="p-5 flex flex-col gap-3 flex-1">
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                    <span className="flex items-center gap-2 text-primary font-heading tracking-wider">
+                      <Calendar size={16} />
+                      {formatDate(event.date)}
                     </span>
-                  )}
-                  {event.price && (
-                    <span className="flex items-center gap-2 text-muted-foreground font-heading">
-                      <Ticket size={15} />
-                      {event.price}
-                    </span>
-                  )}
-                </div>
-                <div className="flex items-start gap-2 text-foreground text-sm">
-                  <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
-                  <div>
-                    {event.mapsUrl ? (
-                      <a
-                        href={event.mapsUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-heading hover:text-primary transition-colors underline underline-offset-2"
-                      >
-                        {event.venue}
-                      </a>
-                    ) : (
-                      <span className="font-heading">{event.venue}</span>
+                    {event.time && (
+                      <span className="flex items-center gap-2 text-muted-foreground font-heading">
+                        <Clock size={15} />
+                        ore {event.time}
+                      </span>
                     )}
-                    {event.address && (
-                      <span className="text-muted-foreground ml-1">
-                        — {event.address}, {event.city}
+                    {event.price && (
+                      <span className="flex items-center gap-2 text-muted-foreground font-heading">
+                        <Ticket size={15} />
+                        {event.price}
                       </span>
                     )}
                   </div>
+                  <div className="flex items-start gap-2 text-foreground text-sm">
+                    <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
+                    <div>
+                      {event.mapsUrl ? (
+                        <a
+                          href={event.mapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-heading hover:text-primary transition-colors underline underline-offset-2"
+                        >
+                          {event.venue}
+                        </a>
+                      ) : (
+                        <span className="font-heading">{event.venue}</span>
+                      )}
+                      {event.address && (
+                        <span className="text-muted-foreground ml-1">
+                          — {event.address}, {event.city}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  {event.organizer && (
+                    <p className="text-xs text-muted-foreground uppercase tracking-widest">
+                      Organizzato da {event.organizer}
+                    </p>
+                  )}
                 </div>
-                {event.organizer && (
-                  <p className="text-xs text-muted-foreground uppercase tracking-widest">
-                    Organizzato da {event.organizer}
-                  </p>
-                )}
               </div>
             ))}
           </motion.div>
