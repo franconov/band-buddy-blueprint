@@ -174,7 +174,6 @@ export type Review = {
   rating?: number; // su 5
   album?: string;
   featured?: boolean;
-  url?: string; // link alla recensione completa (cliccabile)
 };
 
 // Recensioni stampa — esempi. Sostituire con citazioni reali quando disponibili.
