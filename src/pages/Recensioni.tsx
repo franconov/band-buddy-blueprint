@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, ExternalLink } from "lucide-react";
 import Layout from "@/components/Layout";
 import { reviews } from "@/data/band";
 
@@ -48,9 +48,34 @@ const Recensioni = () => {
                     <Rating value={review.rating} />
                   </div>
                 )}
-                <blockquote className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-foreground">
-                  “{review.quote}”
-                </blockquote>
+
+                {review.url ? (
+                  <a
+                    href={review.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    <blockquote className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-foreground group-hover:text-primary transition-colors cursor-pointer">
+                      "{review.quote}"
+                    </blockquote>
+                    <span className="flex items-center gap-1 text-xs text-muted-foreground uppercase tracking-widest mb-6 group-hover:text-primary transition-colors">
+                      <ExternalLink size={12} />
+                      Leggi la recensione completa
+                    </span>
+                  </a>
+                ) : (
+                  <blockquote className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-foreground">
+                    "{review.quote}"
+                  </blockquote>
+                )}
+
+                {review.album && (
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest mb-4 font-bold">
+                    Album: {review.album}
+                  </p>
+                )}
+
                 <div className="flex items-center gap-4">
                   <span className="h-px w-12 bg-primary" />
                   <cite className="not-italic">
