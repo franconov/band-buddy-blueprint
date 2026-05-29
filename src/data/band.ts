@@ -170,6 +170,7 @@ export type Review = {
   quote: string;
   source: string;
   author?: string;
+  url?: string;
   rating?: number; // su 5
   album?: string;
   featured?: boolean;
