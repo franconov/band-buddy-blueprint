@@ -178,6 +178,7 @@ export const liveEvents: LiveEvent[] = [
     organizer: "03db Production",
     price: "12€",
     description: "Live concert — presentazione dell'album 'Oltre ogni ragionevole dubbio'",
+    imageUrl: "/5giugno.jpg",
   },
 ];
 
