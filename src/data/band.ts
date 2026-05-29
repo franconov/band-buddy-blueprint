@@ -153,16 +153,31 @@ export const social = {
 
 export type LiveEvent = {
   date: string; // ISO 8601
+  time?: string; // es. "22:00"
+  endTime?: string;
   city: string;
   venue: string;
+  address?: string;
+  mapsUrl?: string;
+  organizer?: string;
+  price?: string; // es. "12€"
   ticketUrl?: string;
+  imageUrl?: string;
+  description?: string;
 };
 
 export const liveEvents: LiveEvent[] = [
   {
     date: "2026-06-05",
+    time: "22:00",
+    endTime: "24:00",
     city: "Torino",
-    venue: "The Fame",
+    venue: "The Fame Club",
+    address: "Corso Umbria, 36",
+    mapsUrl: "https://maps.google.com/?q=The+Fame+Club+Corso+Umbria+36+Torino",
+    organizer: "03db Production",
+    price: "12€",
+    description: "Live concert — presentazione dell'album 'Oltre ogni ragionevole dubbio'",
   },
 ];
 
@@ -170,10 +185,10 @@ export type Review = {
   quote: string;
   source: string;
   author?: string;
-  url?: string;
   rating?: number; // su 5
   album?: string;
   featured?: boolean;
+  url?: string; // link alla recensione completa (cliccabile)
 };
 
 // Recensioni stampa — esempi. Sostituire con citazioni reali quando disponibili.
