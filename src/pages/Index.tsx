@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, Clock, Ticket } from "lucide-react";
 import Layout from "@/components/Layout";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import logo from "@/assets/logo.jpg";
@@ -22,7 +22,7 @@ const Index = () => (
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10 flex flex-col items-center gap-8 px-4"
+        className="relative z-10 flex flex-col items-center gap-8 px-4 w-full max-w-xl"
       >
         <div className="glow-red rounded-full">
           <img
@@ -69,6 +69,72 @@ const Index = () => (
             Contattaci
           </Link>
         </motion.div>
+
+        {/* Live card sotto i bottoni */}
+        {liveEvents.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9 }}
+            className="w-full"
+          >
+            <p className="text-primary text-xs font-heading tracking-widest uppercase mb-3 text-center">
+              Prossimo Live
+            </p>
+            {liveEvents.map((event) => (
+              <div
+                key={`${event.date}-${event.venue}`}
+                className="p-5 rounded border border-primary/50 bg-card/70 backdrop-blur flex flex-col gap-3"
+              >
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                  <span className="flex items-center gap-2 text-primary font-heading tracking-wider">
+                    <Calendar size={16} />
+                    {formatDate(event.date)}
+                  </span>
+                  {event.time && (
+                    <span className="flex items-center gap-2 text-muted-foreground font-heading">
+                      <Clock size={15} />
+                      ore {event.time}
+                    </span>
+                  )}
+                  {event.price && (
+                    <span className="flex items-center gap-2 text-muted-foreground font-heading">
+                      <Ticket size={15} />
+                      {event.price}
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-start gap-2 text-foreground text-sm">
+                  <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
+                  <div>
+                    {event.mapsUrl ? (
+                      <a
+                        href={event.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-heading hover:text-primary transition-colors underline underline-offset-2"
+                      >
+                        {event.venue}
+                      </a>
+                    ) : (
+                      <span className="font-heading">{event.venue}</span>
+                    )}
+                    {event.address && (
+                      <span className="text-muted-foreground ml-1">
+                        — {event.address}, {event.city}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                {event.organizer && (
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest">
+                    Organizzato da {event.organizer}
+                  </p>
+                )}
+              </div>
+            ))}
+          </motion.div>
+        )}
       </motion.div>
     </section>
 
@@ -102,57 +168,6 @@ const Index = () => (
         </motion.div>
       </div>
     </section>
-
-    {/* Live */}
-    {liveEvents.length > 0 && (
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-heading text-foreground mb-2"
-          >
-            Prossimi Live
-          </motion.h2>
-          <div className="w-16 h-1 bg-primary mb-10" />
-
-          <div className="space-y-4">
-            {liveEvents.map((event, i) => (
-              <motion.div
-                key={`${event.date}-${event.venue}`}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-6 rounded border border-border bg-card hover:border-primary/50 transition-colors flex flex-col md:flex-row md:items-center gap-4 md:gap-8"
-              >
-                <div className="flex items-center gap-3 text-primary font-heading tracking-wider">
-                  <Calendar size={20} />
-                  {formatDate(event.date)}
-                </div>
-                <div className="flex items-center gap-3 text-foreground">
-                  <MapPin size={18} className="text-muted-foreground" />
-                  <span className="font-heading">{event.venue}</span>
-                  <span className="text-muted-foreground">·</span>
-                  <span className="text-muted-foreground">{event.city}</span>
-                </div>
-                {event.ticketUrl && (
-                  <a
-                    href={event.ticketUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="md:ml-auto px-4 py-2 bg-primary text-primary-foreground font-heading text-sm tracking-wider rounded hover:bg-primary/90 transition-colors inline-block w-fit"
-                  >
-                    Biglietti
-                  </a>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
 
     {/* Teaser section */}
     <section className="py-20 bg-card">
