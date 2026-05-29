@@ -173,46 +173,35 @@ export type Review = {
   rating?: number; // su 5
   album?: string;
   featured?: boolean;
+  url?: string; // link alla recensione completa (cliccabile)
 };
 
 // Recensioni stampa — esempi. Sostituire con citazioni reali quando disponibili.
 export const reviews: Review[] = [
   {
     quote:
-      "Un muro di suono che scava nell'anima. Il Dubbio di Davide ridefinisce i confini del rock alternativo contemporaneo.",
-    source: "Rolling Stone Italia",
-    author: "Marco De Angelis",
+      "Il nuovo lavoro discografico de Il Dubbio Di Davide rappresenta un'evoluzione del percorso artistico della band: un disco dalla forte identità sonora, che mantiene al centro il tema del dubbio come motore di ricerca e consapevolezza.",
+    source: "Rockol",
     rating: 5,
     album: "Oltre ogni ragionevole dubbio",
     featured: true,
+    url: "https://www.rockol.it/news-758168/il-dubbio-di-davide-oltre-ogni-ragionevole-dubbio",
   },
   {
     quote:
-      "Puro istinto, rabbia e melodia. Un debutto folgorante che non lascia scampo all'ascoltatore.",
-    source: "Rockit",
-    rating: 5,
-    album: "Il Dubbio di Davide",
-  },
-  {
-    quote:
-      "La tensione emotiva è palpabile in ogni singola nota. Un'opera densa, oscura e incredibilmente necessaria.",
-    source: "SentireAscoltare",
-    rating: 4,
-    album: "Oltre ogni ragionevole dubbio",
-  },
-  {
-    quote:
-      "Raramente si incontra una tale maturità compositiva in una band. Il futuro del rock italiano passa da qui.",
-    source: "Indie-Eye",
+      "Ci sono dischi che si limitano a raccontare emozioni, e altri che riescono a trascinarci dentro un universo preciso, fatto di tensioni, fragilità e domande senza risposta. \"Oltre ogni ragionevole dubbio\" appartiene decisamente alla seconda categoria.",
+    source: "Fuorilascatola",
     rating: 5,
     album: "Oltre ogni ragionevole dubbio",
+    url: "https://www.fuorilascatola.it/il-dubbio-come-forza-il-rock-come-verita-recensione-dellalbum-oltre-ogni-ragionevole-dubbio-di-il-dubbio-di-davide/",
   },
   {
     quote:
-      "Un viaggio sonoro tra oscurità e luce. Davide interroga il silenzio e risponde con una scarica elettrica.",
-    source: "Rumore",
-    rating: 4,
-    album: "Stelle",
+      "Il ritorno sulle scene prende forma con il nuovo album Oltre Ogni Ragionevole Dubbio, uscito a marzo e prodotto da Tony De Gruttola presso i 03db Production. Diciassette tracce che ruotano attorno al tema del dubbio, declinate in un rock diretto, emotivo, spesso nostalgico.",
+    source: "Brainstormingmagazine",
+    rating: 5,
+    album: "Oltre ogni ragionevole dubbio",
+    url: "https://www.brainstormingmagazine.it/2026/05/il-dubbio-di-davide-oltre-ogni-ragionevole-dubbio-il-ritorno-della-storica-realta-torinese-tra-rock-e-introspezione/",
   },
 ];
 
