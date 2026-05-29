@@ -8,6 +8,7 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/biografia", label: "Biografia" },
   { to: "/discografia", label: "Discografia" },
+  { to: "/recensioni", label: "Recensioni" },
   { to: "/contatti", label: "Contatti" },
 ];
 

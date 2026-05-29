@@ -166,6 +166,56 @@ export const liveEvents: LiveEvent[] = [
   },
 ];
 
+export type Review = {
+  quote: string;
+  source: string;
+  author?: string;
+  rating?: number; // su 5
+  album?: string;
+  featured?: boolean;
+};
+
+// Recensioni stampa — esempi. Sostituire con citazioni reali quando disponibili.
+export const reviews: Review[] = [
+  {
+    quote:
+      "Un muro di suono che scava nell'anima. Il Dubbio di Davide ridefinisce i confini del rock alternativo contemporaneo.",
+    source: "Rolling Stone Italia",
+    author: "Marco De Angelis",
+    rating: 5,
+    album: "Oltre ogni ragionevole dubbio",
+    featured: true,
+  },
+  {
+    quote:
+      "Puro istinto, rabbia e melodia. Un debutto folgorante che non lascia scampo all'ascoltatore.",
+    source: "Rockit",
+    rating: 5,
+    album: "Il Dubbio di Davide",
+  },
+  {
+    quote:
+      "La tensione emotiva è palpabile in ogni singola nota. Un'opera densa, oscura e incredibilmente necessaria.",
+    source: "SentireAscoltare",
+    rating: 4,
+    album: "Oltre ogni ragionevole dubbio",
+  },
+  {
+    quote:
+      "Raramente si incontra una tale maturità compositiva in una band. Il futuro del rock italiano passa da qui.",
+    source: "Indie-Eye",
+    rating: 5,
+    album: "Oltre ogni ragionevole dubbio",
+  },
+  {
+    quote:
+      "Un viaggio sonoro tra oscurità e luce. Davide interroga il silenzio e risponde con una scarica elettrica.",
+    source: "Rumore",
+    rating: 4,
+    album: "Stelle",
+  },
+];
+
 export type FAQ = {
   question: string;
   answer: string;
