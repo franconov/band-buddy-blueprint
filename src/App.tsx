@@ -10,6 +10,7 @@ import Index from "./pages/Index.tsx";
 import Biografia from "./pages/Biografia.tsx";
 import Discografia from "./pages/Discografia.tsx";
 import Contatti from "./pages/Contatti.tsx";
+import Recensioni from "./pages/Recensioni.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import CookiePolicy from "./pages/CookiePolicy.tsx";
 import NotFound from "./pages/NotFound.tsx";
