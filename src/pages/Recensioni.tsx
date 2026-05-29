@@ -16,11 +16,6 @@ const Rating = ({ value }: { value: number }) => (
 );
 
 const Recensioni = () => {
-  const featured = reviews.find((r) => r.featured) ?? reviews[0];
-  const rest = reviews.filter((r) => r !== featured);
-  const secondary = rest[0];
-  const others = rest.slice(1);
-
   return (
     <Layout>
       <section className="py-24">
