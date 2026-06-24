@@ -152,20 +152,7 @@ export const social = {
 };
 
 export const liveEvents: LiveEvent[] = [
-  {
-    date: "2026-06-05",
-    time: "22:00",
-    endTime: "24:00",
-    city: "Torino",
-    venue: "The Fame Club",
-    address: "Corso Umbria, 36",
-    mapsUrl: "https://maps.google.com/?q=The+Fame+Club+Corso+Umbria+36+Torino",
-    organizer: "03db Production",
-    price: "12€",
-    description: "Live concert — presentazione dell'album 'Oltre ogni ragionevole dubbio'",
-    imageUrl: "/5giugno.jpg",
-  },
-  {
+   {
     date: "2026-07-05",
     time: "21:00",
     city: "Grugliasco",
