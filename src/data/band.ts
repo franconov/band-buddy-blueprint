@@ -151,21 +151,6 @@ export const social = {
   soundcloud: "https://soundcloud.com/ildubbiodidavide",
 };
 
-export type LiveEvent = {
-  date: string; // ISO 8601
-  time?: string; // es. "22:00"
-  endTime?: string;
-  city: string;
-  venue: string;
-  address?: string;
-  mapsUrl?: string;
-  organizer?: string;
-  price?: string; // es. "12€"
-  ticketUrl?: string;
-  imageUrl?: string;
-  description?: string;
-};
-
 export const liveEvents: LiveEvent[] = [
   {
     date: "2026-06-05",
@@ -179,6 +164,16 @@ export const liveEvents: LiveEvent[] = [
     price: "12€",
     description: "Live concert — presentazione dell'album 'Oltre ogni ragionevole dubbio'",
     imageUrl: "/5giugno.jpg",
+  },
+  {
+    date: "2026-07-05",
+    time: "21:00",
+    city: "Grugliasco",
+    venue: "Parco Porporati",
+    mapsUrl: "https://maps.google.com/?q=Parco+Porporati+Grugliasco",
+    organizer: "Il Dubbio Di Davide, Comune di Grugliasco, Restate al Parco, SOULFOOD MU5IC FACTORY",
+    description: "Restate al Parco 2026 — Tour album 'Oltre ogni ragionevole dubbio'",
+    imageUrl: "/porporati-5-luglio.jpg",
   },
 ];
 
