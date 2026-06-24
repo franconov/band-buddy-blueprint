@@ -135,9 +135,9 @@ export const releases: Release[] = [
 ];
 
 export const featuredVideo = {
-  title: "Stelle",
-  youtubeId: "gAm_HNSCMGQ",
-  youtubeUrl: "https://www.youtube.com/watch?v=gAm_HNSCMGQ",
+  title: "Diglielo tu alla Luna",
+  youtubeId: "RUvicfX5AJo",
+  youtubeUrl: "https://www.youtube.com/watch?v=RUvicfX5AJo",
 };
 
 export const social = {
