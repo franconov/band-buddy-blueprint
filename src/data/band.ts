@@ -203,21 +203,12 @@ export const reviews: Review[] = [
   },
   {
     quote:
-      "Il ritorno sulle scene prende forma con il nuovo album Oltre Ogni Ragionevole Dubbio, uscito a marzo e prodotto da Tony De Gruttola presso i 03db Production. Diciassette tracce che ruotano attorno al tema del dubbio, declinate in un rock diretto, emotivo, spesso nostalgico.",
-    source: "Brainstormingmagazine",
-    rating: 5,
-    album: "Oltre ogni ragionevole dubbio",
-    url: "https://www.brainstormingmagazine.it/2026/05/il-dubbio-di-davide-oltre-ogni-ragionevole-dubbio-il-ritorno-della-storica-realta-torinese-tra-rock-e-introspezione/",
-  },
-  {
-    quote:
       "Un lavoro sincero, costruito attorno a canzoni solide e a una scrittura precisa e ricca di riferimenti.",
     source: "Rockit",
     rating: 5,
     album: "Oltre ogni ragionevole dubbio",
     url: "https://www.rockit.it/recensione/74419/ildubbio01-oltre-ogni-ragionevole-dubbio",
   },
-];
 ];
 
 export type FAQ = {
